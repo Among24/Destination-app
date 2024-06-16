@@ -1,0 +1,64 @@
+@import url("https://fonts.googleapis.com/css2?family=BhuTuka+Expanded+One&family=Quicksand&family=Tapestry&display=swap");
+
+// Variable Declarations
+$primary-color: #222831;
+$secondary-color: #00adb5;
+$third-color: #eeeeee;
+$four-color: #fff;
+$five-color: #aaa;
+$light-color: #fff;
+$dark-color: #000;
+$err: red;
+$bar-color: #fff;
+$hover-btn-satu: $primary-color;
+$footer-color: $secondary-color;
+$reset: unset;
+$grey: darkgrey;
+$shadow-color-dua: rgba(0, 0, 0, 0.1);
+$shadow-color-tiga: rgba(0, 0, 0, 0.2);
+$light-color-list: #f9f9f9;
+$min-size: 44px;
+$shadow-color: #666;
+$quicksand-font: "Quicksand", sans-serif;
+$tapestry-font: "Tapestry", cursive;
+$poppins-font: "Poppins";
+$shadow-color-card: rgba(0, 0, 0, 0.3);
+$border-input: #bcbcbc;
+$background-nav-responsive: #505050;
+$smooth-scroll: smooth;
+$box-border: border-box;
+$p-0: 0;
+$m-0: 0;
+$hidden-flow: hidden;
+
+// Global Styles
+* {
+  margin: $m-0;
+  padding: $p-0;
+  box-sizing: $box-border;
+}
+
+html {
+  scroll-behavior: $smooth-scroll;
+}
+
+body {
+  font-family: $quicksand-font;
+  margin: $m-0;
+  padding: $p-0;
+}
+
+// Skip Link
+.skip-link {
+  position: absolute;
+  top: -80px;
+  left: 0;
+  background-color: $four-color;
+  color: $light-color;
+  padding: 8px;
+  z-index: 10;
+
+  &:focus {
+    top: 0;
+  }
+}
