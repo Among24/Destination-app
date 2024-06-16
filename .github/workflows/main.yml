@@ -1,0 +1,39 @@
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches:
+      - master  # Ganti dengan branch yang Anda gunakan
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+
+    - name: Set up Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: '16'  # Ganti dengan versi Node.js yang Anda butuhkan
+
+    - name: Install dependencies
+      run: npm install
+      working-directory: ./Destination-app
+
+    - name: Build project
+      run: npm run build  # Ganti dengan perintah build yang sesuai dengan proyek Anda
+      working-directory: ./Destination-app
+
+    - name: Copy files to output directory
+      run: |
+        mkdir -p build
+        cp -r src/templates/* build/
+      working-directory: ./Destination-app
+
+    - name: Deploy to GitHub Pages
+      uses: peaceiris/actions-gh-pages@v3
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: ./Destination-app/build
